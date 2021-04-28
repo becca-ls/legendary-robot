@@ -13,6 +13,7 @@ module nao_recilado(
     initial begin
         next_state = A;
         state = A;
+        
     end
 
     always@(posedge clk)begin
@@ -29,7 +30,7 @@ module nao_recilado(
                     end
                     else begin
                         out <= 0;
-                        count <= count;
+                        count <= 0;
                         next_state = B;
                     end
                 end
