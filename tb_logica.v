@@ -18,24 +18,24 @@ initial begin
     $dumpfile("ondas.vcd");  
     $dumpvars(0, logica_); 
 
-    timer_done = 0; door_closed = 0; clearn = 0; startn = 0; stopn = 0; 
-    
+        timer_done = 0; door_closed = 0; clearn = 1; startn = 1; stopn = 1; 
 
-    timer_done = 0; door_closed = 1; clearn = 0; startn = 1; stopn = 0; 
 
-    #100;
+        timer_done = 0; door_closed = 1; clearn = 1; startn = 0; stopn = 1; 
+        #100;
 
-    timer_done = 0; door_closed = 1; clearn = 0; startn = 0; stopn = 0;
+        timer_done = 0; door_closed = 1; clearn = 1; startn = 1; stopn = 1;
+        #100;
 
-    #100;
+        timer_done = 1; door_closed = 1; clearn = 1; startn = 1; stopn = 1;
+        #100;
 
-    timer_done = 1; door_closed = 1; clearn = 0; startn = 0; stopn = 0;
+        timer_done = 0; door_closed = 0; clearn = 1; startn = 1; stopn = 1;
+        #100;
 
-    #100;
+        timer_done = 0; door_closed = 1; clearn = 0; startn = 0; stopn = 1;
+        #100;
 
-    timer_done = 0; door_closed = 0; clearn = 0; startn = 0; stopn = 0;
-
-    #100;
 
 end
 
