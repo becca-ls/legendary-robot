@@ -7,8 +7,8 @@ output Q, Qn;
 
 wire A, B, S, R;
 
-assign A = (door_closed & startn & ~stopn);
-assign B = (~door_closed | timer_done | stopn | clearn);
+assign A = (door_closed & ~startn & stopn);
+assign B = (~door_closed | timer_done | ~stopn | ~clearn);
 
 assign S = A & ~B;
 assign R = B;
