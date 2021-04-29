@@ -6,13 +6,12 @@ module mod10(
     input   enable,  
     output reg [3:0] ones,
   	output reg tc,
-  	output zero
+  	output reg zero
 );  
  
   reg primeiravez;
 
  initial begin
-   assign ones = data;
    assign tc = 1'b0;
    primeiravez = 0;
   end
@@ -20,10 +19,11 @@ module mod10(
    if (!clrn) begin  
      assign ones = 0;
    end else begin
-        if (enable) 
+     if (!enable) begin
       		assign ones = ones;
+    	 end
       	else begin
-          if(primeiravez == 0)begin
+          if(primeiravez == 0 && !loadn)begin
             assign ones = data;
               primeiravez = 1;
             end
@@ -38,6 +38,7 @@ module mod10(
             end
           if (ones <= 0) begin
                assign tc = 1'b1;
+               assign zero = 0;
               end
           if (ones > 0 && ones <= 9) begin 
                assign tc = 1'b0;

@@ -6,13 +6,12 @@ module mod6(
     input   enable,  
     output reg [3:0] tens,
   	output reg tc,
-  	output zero
+  	output reg zero
 );  
  
   reg primeiravez;
 
  initial begin
-   assign tens = data;
    assign tc = 1'b0;
    primeiravez = 0;
   end
@@ -21,10 +20,10 @@ module mod6(
    if (!clrn) begin  
      assign tens = 0;
    end else begin
-        if (enable) 
+     if (!enable) 
       		assign tens = tens;
       	else begin
-          if(primeiravez == 0)begin
+          if(primeiravez == 0 && !loadn)begin
             assign tens = data;
               primeiravez = 1;
             end
@@ -39,6 +38,7 @@ module mod6(
             end
           if (tens <= 0) begin
                assign tc = 1'b1;
+               assign zero = 1'b0;
               end
           if (tens > 0 && tens <= 5) begin 
                assign tc = 1'b0;

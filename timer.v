@@ -22,7 +22,8 @@ module timer(
     .ones(sec_ones),
     .tc(tctemp),
     .zero(zero)
-  ); 
+    );
+  
   
    mod6 inst(  
     .data(data),
@@ -35,6 +36,7 @@ module timer(
     .zero(zero)
   ); 
   
+  /*
     mod10 inst5(  
     .data(data),
     .loadn(loadn),
@@ -44,5 +46,5 @@ module timer(
     .ones(mins),
     .zero(zero)
   ); 
-  
+  */
 endmodule

@@ -27,16 +27,17 @@ module tb;
   	); 
   
   initial begin  
-    data <= 4;
+    
+        $monitor ("T=%0t enable=%0b mins=%0d sec_tens=%0d sec_ones=%0d  clrn=%0b", $time, enable,mins,sec_tens ,sec_ones, clrn);  
+    
+    data <= 5;
     clock <= 0; 
-    enable <= 1'b0;
+    enable <= 1'b1;
     clrn <= 1'b1; 
+    loadn <= 1'b0; 
  
-    $monitor ("T=%0t enable=%0b mins=%0d sec_tens=%0d sec_ones=%0d  clrn=%0b", $time, enable,mins,sec_tens ,sec_ones, clrn);  
-    repeat(9) @ (posedge clock);  
-    //enable <= 1; 
-  
-    //repeat(11) @ (posedge clock); 
+    
+    repeat(10) @ (posedge clock); 
     $finish;  
   end  
 endmodule
