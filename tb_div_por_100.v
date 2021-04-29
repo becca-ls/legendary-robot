@@ -1,5 +1,5 @@
 //Bancada de testes:
-
+`timescale 1ms / 1ms
 module tb_div100;
     parameter SEMIPERIOD = 5;
     reg clk;

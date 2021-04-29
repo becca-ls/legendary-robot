@@ -1,38 +1,46 @@
-module tb;  
- 
-  
-  reg [3:0] data;
-  reg  loadn;
-  reg  clrn;
-  reg clock;  
-  reg enable;
-  wire [3:0] tens;  
-  wire  tc;
-  
-    
-  always #10 clock = ~clock;  
+module tb_mod6;
+	parameter SEMIPERIOD = 5;
+	wire [3:0] data; 
+  	wire loadn; 
+  	wire clrn;
+    	wire clock; 
+    	wire enable;
+    	wire [3:0] tens;
+  	wire tc;
+  	wire zero;
+	
+	reg [3:0]Data;
+	reg Loadn;
+	reg Clrn;
+	reg clk;
+	reg En;
+	
+	assign data = Data;
+	assign loadn = Loadn;
+	assign clrn = Clrn;
+	assign clock = clk;
+	assign enable = En;
+	always #SEMIPERIOD clk = ~clk;
+	
+	mod6 teste(data,loadn,clrn,clock,enable,tens,tc,zero);
+	
+	initial begin
+		$dumpfile("ondas.vcd");
+		$dumpvars(0,tb_mod6);
+		clk = 0;
+		Data = 4'd1;
+		Loadn = 1;
+		Clrn = 1;
+	     En = 0;
+		#20
+		Loadn = 0;
+		#10
+		Data = 4'd4;
+		#10
+		Loadn = 1;
+		En = 1;
+		#1000;
+		$finish;
+	end
 
-  mod6 u0  (  
-    .data(data),
-    .loadn(loadn),
-    .clrn(clrn),
-    .clock(clock),  
-    .enable(enable),
-    .tens(tens),
-    .tc(tc)
-  	); 
-  
-  initial begin  
-    data <= 2;
-    clock <= 0; 
-    enable <= 1'b0;
-    clrn <= 1'b1; 
- 
-    $monitor ("T=%0t enable=%0b tnes=%0d tc=%0d, clrn=%0b", $time, enable, tens, tc, clrn);  
-    repeat(9) @ (posedge clock);  
-    //enable <= 1; 
-  
-    //repeat(11) @ (posedge clock); 
-    $finish;  
-  end  
 endmodule
