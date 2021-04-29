@@ -37,11 +37,11 @@ endmodule
 
 module magneton_;
 
-    reg timer_done, door_closed, clearn, startn, stopn;
+    reg timer_done, door_closed, clearn, startn, stopn, Q;
 
-    magneton dut(
+    magnetron dut(
         .timer_done(timer_done), .door_closed(door_closed),
-        .clearn(clearn), .startn(startn), .stopn(stopn)
+        .clearn(clearn), .startn(startn), .stopn(stopn), .Q(Q)
     );
 
     initial begin

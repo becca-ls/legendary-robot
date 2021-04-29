@@ -14,7 +14,7 @@ endmodule
 */
 
 `timescale 1ns / 1ps
-module magneton(timer_done, door_closed, clearn, startn, stopn);
+module magnetron(timer_done, door_closed, clearn, startn, stopn, Q);
 
 input timer_done, door_closed, clearn, startn, stopn;
 output Q, Qn;
@@ -30,7 +30,7 @@ assign R = B;
 latch a1(.S(S), .R(R), .Q(Q), .Qn(Qn));
 
 endmodule
-
+/*
 module latch(S, R, Q, Qn);
 
 input S, R;
@@ -44,6 +44,6 @@ assign Q = Q_int;
 assign Qn = Qn_int; 
 
 endmodule
-
+*/
 
 
