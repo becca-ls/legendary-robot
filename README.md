@@ -1,2 +1,2 @@
-# legendary-robot
-
+Esse é um controlador de microondas feito pela equipe 11. A fim de compilar o projeto, sugerimos que todos os arquivos sejam extraídos da pasta .zip e qu
+e após isso abra-se o próprio arquivo em um editor de código que suporte verilog. A linha de compilação necessária para compilar é: iverilog nivel1/tb_nivel1.v nivel1/nivel1.v nivel2/decoder_bcd_to_7seg.v nivel2/Entrada_timer_controle.v nivel2/magneton.v nivel2/timer.v nivel3/atraso_trepidacao.v nivel3/codificadorPrioritario.v nivel3/dividido_por_100.v nivel3/latch.v nivel3/logica.v nivel3/mod10.v nivel3/mod6.v nivel3/mux.v -o ok.
