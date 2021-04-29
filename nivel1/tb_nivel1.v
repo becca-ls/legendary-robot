@@ -64,7 +64,13 @@ module tb_nivel1;
 		stopn = 1;
 		door_closed = 1;
 		
-		#2000
+		#200
+		key = 10'b0000000000;
+		startn = 1;
+		stopn = 1;
+		door_closed = 1;
+		
+		#1800
 		key = 10'b0000000000;
 		startn = 1;
 		stopn = 0;
@@ -87,6 +93,13 @@ module tb_nivel1;
 		startn = 0;
 		stopn = 1;
 		door_closed = 1;
+		
+		#2000;
+		key = 10'b0000000000;
+		startn = 0;
+		stopn = 1;
+		door_closed = 1;
+		clearn = 0;
 		
 		#100000
 		
