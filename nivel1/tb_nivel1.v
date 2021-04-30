@@ -101,6 +101,35 @@ module tb_nivel1;
 		door_closed = 1;
 		clearn = 0;
 		
+		#2000
+		clearn = 1;
+		
+		#100
+		key = 10'b0000010000;
+		startn = 1;
+		stopn = 1;
+		door_closed = 1;
+		
+		#100;
+		key = 10'b0000000000;
+		startn = 1;
+		stopn = 1;
+		door_closed = 1;
+		
+		#100;
+		key = 10'b0000000001;
+		startn = 1;
+		stopn = 1;
+		door_closed = 1;
+		
+		#100;
+		key = 10'b0000000000;
+		startn = 1;
+		stopn = 1;
+		door_closed = 1;
+		#100
+		startn = 0;
+		
 		#100000
 		
 		
